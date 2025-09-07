@@ -1,0 +1,83 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_us_heroes",
+  "info": {
+    "singularName": "about-us-hero",
+    "pluralName": "about-us-heroes",
+    "displayName": "About US hero"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "heroTitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "heroSubtitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "companyDescription": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "statistics": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.statistic",
+      "repeatable": true
+    },
+    "socialLinks": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.social-link",
+      "repeatable": true
+    },
+    "partnerLogos": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.partner-logo",
+      "repeatable": true
+    },
+    "sections": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.info-section",
+      "repeatable": true
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "carausel_images",
+  "info": {
+    "singularName": "carausel-image",
+    "pluralName": "carausel-images",
+    "displayName": "carausel-image"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "altText": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "IsActive": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  }
+}

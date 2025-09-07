@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brand_partner_logos",
+  "info": {
+    "singularName": "brand-partner-logo",
+    "pluralName": "brand-partner-logos",
+    "displayName": "Brand Partner Logo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "companyname": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "order": {
+      "type": "integer",
+      "min": 1
+    },
+    "isActive": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  }
+}

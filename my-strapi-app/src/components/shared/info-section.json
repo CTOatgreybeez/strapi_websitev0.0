@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_info_sections",
+  "info": {
+    "displayName": "info Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "Linktext": {
+      "type": "string"
+    },
+    "LinkUrl": {
+      "type": "string"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "config": {}
+}
