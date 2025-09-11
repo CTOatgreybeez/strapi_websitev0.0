@@ -596,6 +596,56 @@ export interface ApiHomepageHeroslideHomepageHeroslide
   };
 }
 
+export interface ApiJobOpportunityJobOpportunity
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'job_opportunities';
+  info: {
+    displayName: 'Job Opportunity';
+    pluralName: 'job-opportunities';
+    singularName: 'job-opportunity';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    applicationDeadline: Schema.Attribute.Date;
+    applicationLink: Schema.Attribute.String;
+    benefits: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    department: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    displayOrder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<1>;
+    employementType: Schema.Attribute.Enumeration<
+      ['full-time', 'part-time', 'contract', 'internship']
+    >;
+    experience: Schema.Attribute.String;
+    isActive: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    isUrgent: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::job-opportunity.job-opportunity'
+    > &
+      Schema.Attribute.Private;
+    location: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    requirements: Schema.Attribute.Text;
+    salaryRange: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPragramsPagePragramsPage extends Struct.SingleTypeSchema {
   collectionName: 'pragrams_pages';
   info: {
@@ -1339,6 +1389,7 @@ declare module '@strapi/strapi' {
       'api::brand-partner-logo.brand-partner-logo': ApiBrandPartnerLogoBrandPartnerLogo;
       'api::carausel-image.carausel-image': ApiCarauselImageCarauselImage;
       'api::homepage-heroslide.homepage-heroslide': ApiHomepageHeroslideHomepageHeroslide;
+      'api::job-opportunity.job-opportunity': ApiJobOpportunityJobOpportunity;
       'api::pragrams-page.pragrams-page': ApiPragramsPagePragramsPage;
       'api::social-media-post.social-media-post': ApiSocialMediaPostSocialMediaPost;
       'api::success-story.success-story': ApiSuccessStorySuccessStory;

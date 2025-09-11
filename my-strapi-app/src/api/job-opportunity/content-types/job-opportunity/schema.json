@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "job_opportunities",
+  "info": {
+    "singularName": "job-opportunity",
+    "pluralName": "job-opportunities",
+    "displayName": "Job Opportunity"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "location": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "string"
+    },
+    "employementType": {
+      "type": "enumeration",
+      "enum": [
+        "full-time",
+        "part-time",
+        "contract",
+        "internship"
+      ]
+    },
+    "department": {
+      "type": "string"
+    },
+    "requirements": {
+      "type": "text"
+    },
+    "benefits": {
+      "type": "text"
+    },
+    "salaryRange": {
+      "type": "string"
+    },
+    "applicationDeadline": {
+      "type": "date"
+    },
+    "applicationLink": {
+      "type": "string"
+    },
+    "displayOrder": {
+      "type": "integer",
+      "required": true,
+      "default": 1
+    },
+    "isActive": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "isUrgent": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  }
+}
