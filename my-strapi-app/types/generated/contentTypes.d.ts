@@ -677,6 +677,42 @@ export interface ApiPragramsPagePragramsPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiSocialMediaPostSocialMediaPost
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'social_media_posts';
+  info: {
+    displayName: 'social-media-post';
+    pluralName: 'social-media-posts';
+    singularName: 'social-media-post';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    displayOrder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<0>;
+    embedCode: Schema.Attribute.Text & Schema.Attribute.Required;
+    isActive: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::social-media-post.social-media-post'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSuccessStorySuccessStory
   extends Struct.CollectionTypeSchema {
   collectionName: 'success_stories';
@@ -1304,6 +1340,7 @@ declare module '@strapi/strapi' {
       'api::carausel-image.carausel-image': ApiCarauselImageCarauselImage;
       'api::homepage-heroslide.homepage-heroslide': ApiHomepageHeroslideHomepageHeroslide;
       'api::pragrams-page.pragrams-page': ApiPragramsPagePragramsPage;
+      'api::social-media-post.social-media-post': ApiSocialMediaPostSocialMediaPost;
       'api::success-story.success-story': ApiSuccessStorySuccessStory;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

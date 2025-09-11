@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "social_media_posts",
+  "info": {
+    "singularName": "social-media-post",
+    "pluralName": "social-media-posts",
+    "displayName": "social-media-post"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "embedCode": {
+      "type": "text",
+      "required": true
+    },
+    "displayOrder": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  }
+}
